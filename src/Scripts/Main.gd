@@ -7,9 +7,7 @@ func _ready():
 	
 
 func _on_TextureButton_pressed():
-	print("asd1")
 	($AnimationPlayer as AnimationPlayer).play("navbarShow")
 
 func _on_ExitOptions_pressed():
-	print("asd2")
 	($AnimationPlayer as AnimationPlayer).play("navbarHide")
