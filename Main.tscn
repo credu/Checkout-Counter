@@ -1,10 +1,10 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/img/icons/Manu.png" type="Texture" id=2]
 [ext_resource path="res://src/img/icons/dinero2.png" type="Texture" id=3]
 [ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://src/scripts/ScrollContainer.gd" type="Script" id=5]
+[ext_resource path="res://src/scripts/ScrollScript.gd" type="Script" id=5]
 [ext_resource path="res://src/img/icons/basic_server2.png" type="Texture" id=6]
 [ext_resource path="res://src/img/icons/77_Essential_Icons_Settings.png" type="Texture" id=7]
 [ext_resource path="res://src/img/icons/power-button.png" type="Texture" id=8]
@@ -12,673 +12,51 @@
 [ext_resource path="res://src/img/icons/inversiones.png" type="Texture" id=10]
 [ext_resource path="res://src/img/icons/dinero.png" type="Texture" id=11]
 [ext_resource path="res://src/img/icons/ingresos.png" type="Texture" id=12]
-[ext_resource path="res://src/fonts/Roboto-Light.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://src/scripts/formulario.gd" type="Script" id=14]
+[ext_resource path="res://src/img/icons/Plus.png" type="Texture" id=13]
+[ext_resource path="res://src/fonts/untitled-font-5.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 120
 use_filter = true
-font_data = ExtResource( 13 )
+font_data = ExtResource( 15 )
 
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 50
+size = 70
 use_filter = true
-font_data = ExtResource( 13 )
+font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "experimental"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:custom_fonts/font")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Label:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ) ]
-}
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
-resource_name = "in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
-}
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=12]
-resource_name = "outIncorrect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
-}
-
-[sub_resource type="Animation" id=16]
-resource_name = "select"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "unselect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "experimental"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:custom_fonts/font")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Label:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ) ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=20]
-resource_name = "outIncorrect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
-}
-
-[sub_resource type="Animation" id=21]
-resource_name = "select"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=22]
-resource_name = "unselect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=23]
-resource_name = "experimental"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:custom_fonts/font")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Label:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ) ]
-}
-
-[sub_resource type="Animation" id=24]
-resource_name = "in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=25]
-resource_name = "outIncorrect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
-}
-
-[sub_resource type="Animation" id=26]
-resource_name = "select"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="Animation" id=27]
-resource_name = "unselect"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Label:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 24.351, -110 ) ]
-}
-
-[sub_resource type="StyleBoxFlat" id=30]
-bg_color = Color( 0.0980392, 0.462745, 0.823529, 1 )
-
-[sub_resource type="StyleBoxFlat" id=31]
-bg_color = Color( 0.0980392, 0.462745, 0.823529, 1 )
-
-[sub_resource type="StyleBoxFlat" id=28]
-bg_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-shadow_color = Color( 0.94902, 0.94902, 0.94902, 1 )
-shadow_size = 10
-
-[sub_resource type="DynamicFont" id=29]
-size = 36
+[sub_resource type="DynamicFont" id=6]
+size = 70
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+shadow_size = 20
+
+[sub_resource type="DynamicFont" id=9]
 size = 63
 use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=10]
 size = 63
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=11]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Options/Background:rect_position")
@@ -729,7 +107,7 @@ tracks/3/keys = {
 "values": [ Vector2( -1080, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=12]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Options/Background:color")
@@ -780,7 +158,9 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=[
+"main",
+]]
 script = ExtResource( 1 )
 
 [node name="Main" type="CanvasLayer" parent="."]
@@ -792,218 +172,6 @@ anchor_bottom = 0.999708
 color = Color( 1, 1, 1, 0.87451 )
 __meta__ = {
 "_edit_use_anchors_": true
-}
-
-[node name="BaseDatos" type="Control" parent="Main"]
-margin_top = 150.0
-margin_bottom = 150.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Black" type="ColorRect" parent="Main/BaseDatos"]
-margin_left = 35.0
-margin_top = 221.0
-margin_right = 1050.0
-margin_bottom = 1031.0
-color = Color( 0.713726, 0.713726, 0.713726, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="White" type="ColorRect" parent="Main/BaseDatos"]
-margin_left = 40.0
-margin_top = 226.0
-margin_right = 1045.0
-margin_bottom = 1026.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Formulario" type="VBoxContainer" parent="Main"]
-margin_left = 110.873
-margin_top = 520.0
-margin_right = 150.873
-margin_bottom = 560.0
-custom_constants/separation = 230
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Nombre" type="Control" parent="Main/Formulario"]
-margin_right = 40.0
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "1"
-}
-
-[node name="Label" type="Label" parent="Main/Formulario/Nombre"]
-margin_left = 24.3513
-margin_top = -37.8403
-margin_right = 267.35
-margin_bottom = 45.1597
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-text = "Nombre:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit0" type="TextEdit" parent="Main/Formulario/Nombre"]
-margin_left = 24.0
-margin_top = -38.0
-margin_right = 842.0
-margin_bottom = 43.0
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-custom_constants/line_spacing = 0
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="ColorRect" type="ColorRect" parent="Main/Formulario/Nombre"]
-margin_left = -27.0
-margin_top = 60.0
-margin_right = 873.0
-margin_bottom = 63.0
-color = Color( 0.733333, 0.870588, 0.984314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Formulario/Nombre"]
-anims/experimental = SubResource( 8 )
-anims/in = SubResource( 9 )
-anims/outIncorrect = SubResource( 12 )
-anims/select = SubResource( 16 )
-anims/unselect = SubResource( 17 )
-
-[node name="Descripcion" type="Control" parent="Main/Formulario"]
-margin_top = 230.0
-margin_right = 40.0
-margin_bottom = 230.0
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "2"
-}
-
-[node name="Label" type="Label" parent="Main/Formulario/Descripcion"]
-margin_left = 24.3513
-margin_top = -37.8403
-margin_right = 523.351
-margin_bottom = 45.1597
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-text = "Descripcion (opcional):"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit1" type="TextEdit" parent="Main/Formulario/Descripcion"]
-margin_left = 24.0
-margin_top = -38.0
-margin_right = 842.0
-margin_bottom = 43.0
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-custom_constants/line_spacing = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Main/Formulario/Descripcion"]
-margin_left = -27.0
-margin_top = 60.0
-margin_right = 873.0
-margin_bottom = 63.0
-color = Color( 0.733333, 0.870588, 0.984314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Formulario/Descripcion"]
-anims/experimental = SubResource( 18 )
-anims/in = SubResource( 19 )
-anims/outIncorrect = SubResource( 20 )
-anims/select = SubResource( 21 )
-anims/unselect = SubResource( 22 )
-
-[node name="Costo" type="Control" parent="Main/Formulario"]
-margin_top = 460.0
-margin_right = 40.0
-margin_bottom = 460.0
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "3"
-}
-
-[node name="Label" type="Label" parent="Main/Formulario/Costo"]
-margin_left = 24.3513
-margin_top = -37.8403
-margin_right = 267.35
-margin_bottom = 45.1597
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-text = "Costo:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit2" type="TextEdit" parent="Main/Formulario/Costo"]
-margin_left = 24.0
-margin_top = -38.0
-margin_right = 842.0
-margin_bottom = 43.0
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
-custom_constants/line_spacing = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Main/Formulario/Costo"]
-margin_left = -27.0
-margin_top = 60.0
-margin_right = 873.0
-margin_bottom = 63.0
-color = Color( 0.733333, 0.870588, 0.984314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Formulario/Costo"]
-anims/experimental = SubResource( 23 )
-anims/in = SubResource( 24 )
-anims/outIncorrect = SubResource( 25 )
-anims/select = SubResource( 26 )
-anims/unselect = SubResource( 27 )
-
-[node name="Summit" type="Control" parent="Main/Formulario"]
-margin_top = 690.0
-margin_right = 40.0
-margin_bottom = 690.0
-
-[node name="Button" type="Button" parent="Main/Formulario/Summit"]
-margin_left = -27.0
-margin_top = -82.0
-margin_right = 873.0
-margin_bottom = 24.0
-custom_styles/hover = SubResource( 30 )
-custom_styles/pressed = SubResource( 31 )
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = SubResource( 29 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Enviar"
-__meta__ = {
-"_edit_use_anchors_": false
 }
 
 [node name="Header" type="Control" parent="Main"]
@@ -1036,6 +204,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="back" type="Button" parent="Main/Header"]
+margin_right = 150.0
+margin_bottom = 150.0
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "d"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="Control" parent="Main"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Bar" type="Control" parent="Main"]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1044,36 +231,75 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="option1" type="ColorRect" parent="Main/Bar"]
+[node name="Button1" type="Button" parent="Main/Bar"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -130.0
+margin_top = -120.0
 margin_right = 360.0
-color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "m"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="option2" type="ColorRect" parent="Main/Bar"]
+[node name="Button2" type="Button" parent="Main/Bar"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -180.0
-margin_top = -130.0
+margin_top = -120.0
 margin_right = 180.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "O"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="option3" type="ColorRect" parent="Main/Bar"]
+[node name="Button3" type="Button" parent="Main/Bar"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -360.0
-margin_top = -130.0
-color = Color( 0, 0, 0, 1 )
+margin_top = -120.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Q"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select" type="ColorRect" parent="Main/Bar"]
+margin_left = 360.0
+margin_top = -10.0
+margin_right = 720.0
+color = Color( 0.0156863, 0.698039, 0.6, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="Button" parent="Main/Bar"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -292.075
+margin_top = -421.014
+margin_right = -15.0747
+margin_bottom = -154.014
+focus_mode = 0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+enabled_focus_mode = 0
+icon = ExtResource( 13 )
+flat = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1081,15 +307,15 @@ __meta__ = {
 [node name="Options" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="Options"]
-margin_left = -1080.0
+margin_right = 1080.0
 margin_bottom = 1920.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0.176471, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ExitOptions" type="TextureButton" parent="Options/Background"]
-margin_left = -1080.0
+margin_right = 1080.0
 margin_bottom = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1135,7 +361,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 763.0
 margin_bottom = 191.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Checkout Counter"
 icon = ExtResource( 3 )
@@ -1167,11 +393,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Base" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Ingresos"]
+[node name="Ingresos" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Ingresos"]
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ingresos"
 icon = ExtResource( 12 )
@@ -1189,12 +415,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Base" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Gastos"]
+[node name="Gastos" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Gastos"]
 margin_left = -13.773
 margin_top = 49.0
 margin_right = 739.227
 margin_bottom = 189.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/hseparation = 12
 text = "Gastos personales"
@@ -1213,11 +439,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Base" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Inversiones"]
+[node name="Inversiones" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Inversiones"]
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Inversiones"
 icon = ExtResource( 10 )
@@ -1239,7 +465,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "La semana"
 icon = ExtResource( 9 )
@@ -1261,7 +487,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Base de datos"
 icon = ExtResource( 6 )
@@ -1283,7 +509,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 593.0
 margin_bottom = 191.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Opciones"
 icon = ExtResource( 7 )
@@ -1317,7 +543,7 @@ __meta__ = {
 [node name="Salir" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Salir"]
 margin_right = 593.0
 margin_bottom = 140.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Salir"
 icon = ExtResource( 8 )
@@ -1330,14 +556,17 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/navbarHide = SubResource( 6 )
-anims/navbarShow = SubResource( 7 )
-[connection signal="focus_entered" from="Main/Formulario/Nombre/TextEdit0" to="Main/Formulario" method="_on_TextEdit0_focus_entered"]
-[connection signal="focus_exited" from="Main/Formulario/Nombre/TextEdit0" to="Main/Formulario" method="_on_TextEdit0_focus_exited"]
-[connection signal="focus_entered" from="Main/Formulario/Descripcion/TextEdit1" to="Main/Formulario" method="_on_TextEdit1_focus_entered"]
-[connection signal="focus_exited" from="Main/Formulario/Descripcion/TextEdit1" to="Main/Formulario" method="_on_TextEdit1_focus_exited"]
-[connection signal="focus_entered" from="Main/Formulario/Costo/TextEdit2" to="Main/Formulario" method="_on_TextEdit2_focus_entered"]
-[connection signal="focus_exited" from="Main/Formulario/Costo/TextEdit2" to="Main/Formulario" method="_on_TextEdit2_focus_exited"]
-[connection signal="pressed" from="Main/Formulario/Summit/Button" to="Main/Formulario" method="_on_Button_pressed"]
+anims/navbarHide = SubResource( 11 )
+anims/navbarShow = SubResource( 12 )
 [connection signal="pressed" from="Main/Header/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Main/Header/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Main/Bar/Plus" to="." method="_on_Plus_pressed"]
 [connection signal="pressed" from="Options/Background/ExitOptions" to="." method="_on_ExitOptions_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Home/Home" to="." method="_on_Home_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Ingresos/Ingresos" to="." method="_on_Ingresos_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Gastos/Gastos" to="." method="_on_Gastos_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Inversiones/Inversiones" to="." method="_on_Inversiones_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Semana/semana" to="." method="_on_semana_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Base/Base" to="." method="_on_Base_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Opciones/Opciones" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Salir/Salir" to="." method="_on_Salir_pressed"]
