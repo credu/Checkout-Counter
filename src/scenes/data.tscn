@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/fonts/Roboto-Light.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/fonts/untitled-font-5.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/scripts/data.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.701961, 0.282353, 0.282353, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Data" type="Control"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1005.0
+margin_bottom = 100.0
+color = Color( 0.909804, 0.909804, 0.909804, 0.145098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nombre" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 17.0
+margin_right = 325.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "motor subevidrio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="descripcion" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 17.0
+margin_right = 577.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simbol" type="Label" parent="."]
+margin_left = 740.0
+margin_top = 17.0
+margin_right = 764.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="costo" type="Label" parent="."]
+margin_left = 763.0
+margin_top = 17.0
+margin_right = 880.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 878.0
+margin_right = 1005.0
+margin_bottom = 100.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = ""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separador" type="ColorRect" parent="."]
+margin_top = 100.0
+margin_right = 1005.0
+margin_bottom = 103.0
+color = Color( 0.713726, 0.713726, 0.713726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

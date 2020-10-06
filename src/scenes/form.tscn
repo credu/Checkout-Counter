@@ -1,0 +1,930 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://src/fonts/Roboto-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/scripts/formulario.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "experimental"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:custom_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "outIncorrect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "select"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "unselect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "experimental"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:custom_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "outIncorrect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "select"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "unselect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "experimental"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:custom_fonts/font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.3513, -37.8403 ), Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "outIncorrect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.827451, 0.184314, 0.184314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ), Vector2( 24.3513, -37.8403 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "select"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.870588, 0.984314, 1 ), Color( 0.188235, 0.247059, 0.623529, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "unselect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.713726, 0.713726, 0.713726, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.247059, 0.623529, 1 ), Color( 0.733333, 0.870588, 0.984314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.351, -110 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.0980392, 0.462745, 0.823529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.0980392, 0.462745, 0.823529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+shadow_color = Color( 0.94902, 0.94902, 0.94902, 1 )
+shadow_size = 10
+
+[sub_resource type="DynamicFont" id=24]
+size = 36
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "early"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "finish"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Form" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Black" type="ColorRect" parent="."]
+margin_left = 35.0
+margin_top = 371.0
+margin_right = 1050.0
+margin_bottom = 1181.0
+color = Color( 0.713726, 0.713726, 0.713726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="White" type="ColorRect" parent="."]
+margin_left = 40.0
+margin_top = 376.0
+margin_right = 1045.0
+margin_bottom = 1176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Formulario" type="VBoxContainer" parent="."]
+margin_left = 110.873
+margin_top = 520.0
+margin_right = 150.873
+margin_bottom = 560.0
+custom_constants/separation = 230
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nombre" type="Control" parent="Formulario"]
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "1"
+}
+
+[node name="Label" type="Label" parent="Formulario/Nombre"]
+margin_left = 24.3513
+margin_top = -37.8403
+margin_right = 267.35
+margin_bottom = 45.1597
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+text = "Nombre:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit0" type="TextEdit" parent="Formulario/Nombre"]
+margin_left = 24.0
+margin_top = -38.0
+margin_right = 842.0
+margin_bottom = 43.0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+custom_constants/line_spacing = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ColorRect" type="ColorRect" parent="Formulario/Nombre"]
+margin_left = -27.0
+margin_top = 60.0
+margin_right = 873.0
+margin_bottom = 63.0
+color = Color( 0.733333, 0.870588, 0.984314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Formulario/Nombre"]
+anims/experimental = SubResource( 6 )
+anims/in = SubResource( 7 )
+anims/outIncorrect = SubResource( 8 )
+anims/select = SubResource( 9 )
+anims/unselect = SubResource( 10 )
+
+[node name="Descripcion" type="Control" parent="Formulario"]
+margin_top = 230.0
+margin_right = 40.0
+margin_bottom = 230.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "2"
+}
+
+[node name="Label" type="Label" parent="Formulario/Descripcion"]
+margin_left = 24.3513
+margin_top = -37.8403
+margin_right = 523.351
+margin_bottom = 45.1597
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+text = "Descripcion (opcional):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit1" type="TextEdit" parent="Formulario/Descripcion"]
+margin_left = 24.0
+margin_top = -38.0
+margin_right = 842.0
+margin_bottom = 43.0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+custom_constants/line_spacing = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Formulario/Descripcion"]
+margin_left = -27.0
+margin_top = 60.0
+margin_right = 873.0
+margin_bottom = 63.0
+color = Color( 0.733333, 0.870588, 0.984314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Formulario/Descripcion"]
+anims/experimental = SubResource( 11 )
+anims/in = SubResource( 12 )
+anims/outIncorrect = SubResource( 13 )
+anims/select = SubResource( 14 )
+anims/unselect = SubResource( 15 )
+
+[node name="Costo" type="Control" parent="Formulario"]
+margin_top = 460.0
+margin_right = 40.0
+margin_bottom = 460.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "3"
+}
+
+[node name="Label" type="Label" parent="Formulario/Costo"]
+margin_left = 24.3513
+margin_top = -37.8403
+margin_right = 267.35
+margin_bottom = 45.1597
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+text = "Costo:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit2" type="TextEdit" parent="Formulario/Costo"]
+margin_left = 24.0
+margin_top = -38.0
+margin_right = 842.0
+margin_bottom = 43.0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+custom_constants/line_spacing = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Formulario/Costo"]
+margin_left = -27.0
+margin_top = 60.0
+margin_right = 873.0
+margin_bottom = 63.0
+color = Color( 0.733333, 0.870588, 0.984314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Formulario/Costo"]
+margin_left = -5.2973
+margin_top = -36.9847
+margin_right = 134.703
+margin_bottom = 23.0153
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.188235, 0.247059, 0.623529, 1 )
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Formulario/Costo"]
+anims/experimental = SubResource( 16 )
+anims/in = SubResource( 17 )
+anims/outIncorrect = SubResource( 18 )
+anims/select = SubResource( 19 )
+anims/unselect = SubResource( 20 )
+
+[node name="Summit" type="Control" parent="Formulario"]
+margin_top = 690.0
+margin_right = 40.0
+margin_bottom = 690.0
+
+[node name="Button" type="Button" parent="Formulario/Summit"]
+margin_left = -27.0
+margin_top = -82.0
+margin_right = 873.0
+margin_bottom = 24.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Enviar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "early"
+anims/early = SubResource( 25 )
+anims/finish = SubResource( 26 )
+[connection signal="focus_entered" from="Formulario/Nombre/TextEdit0" to="Formulario" method="_on_TextEdit0_focus_entered"]
+[connection signal="focus_exited" from="Formulario/Nombre/TextEdit0" to="Formulario" method="_on_TextEdit0_focus_exited"]
+[connection signal="focus_entered" from="Formulario/Descripcion/TextEdit1" to="Formulario" method="_on_TextEdit1_focus_entered"]
+[connection signal="focus_exited" from="Formulario/Descripcion/TextEdit1" to="Formulario" method="_on_TextEdit1_focus_exited"]
+[connection signal="focus_entered" from="Formulario/Costo/TextEdit2" to="Formulario" method="_on_TextEdit2_focus_entered"]
+[connection signal="focus_exited" from="Formulario/Costo/TextEdit2" to="Formulario" method="_on_TextEdit2_focus_exited"]
+[connection signal="pressed" from="Formulario/Summit/Button" to="Formulario" method="_on_Button_pressed"]
