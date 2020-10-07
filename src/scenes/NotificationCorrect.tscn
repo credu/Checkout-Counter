@@ -1,0 +1,165 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/fonts/seguisb.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/fonts/segoeuil.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.764706, 0.901961, 0.796078, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.831373, 0.929412, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.831373, 0.929412, 0.854902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.831373, 0.929412, 0.854902, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+
+[sub_resource type="DynamicFont" id=21]
+size = 45
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 45
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "correct"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.278431 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 50 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "incorrect"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Notifications" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="border" type="Button" parent="."]
+margin_left = 105.0
+margin_top = 240.0
+margin_right = 975.0
+margin_bottom = 450.0
+focus_mode = 0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/focus = SubResource( 20 )
+custom_styles/normal = SubResource( 16 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Button" parent="."]
+margin_left = 110.0
+margin_top = 245.0
+margin_right = 970.0
+margin_bottom = 445.0
+focus_mode = 0
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/normal = SubResource( 17 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 265.0
+margin_right = 437.0
+margin_bottom = 326.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.0823529, 0.341176, 0.141176, 1 )
+text = "Todo correcto!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 330.0
+margin_right = 948.0
+margin_bottom = 432.0
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color = Color( 0.0823529, 0.341176, 0.141176, 1 )
+text = "La tarea a sido cumplida satisfactoriamente."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "correct"
+anims/correct = SubResource( 25 )
+anims/incorrect = SubResource( 26 )

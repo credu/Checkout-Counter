@@ -3,6 +3,8 @@ extends Node
 var option = 0
 var state = 0
 var content
+var notification
+var count = 1
 
 func _ready():
 	$Options/Background.color = Color8(1,1,1,0)
@@ -90,3 +92,15 @@ func _plus():
 	elif ($Main/Bar/Plus.disabled==false):
 		$Main/Bar/Plus.disabled=false
 		$Main/Bar/Plus.visible=true
+
+func _font_notification(var num):
+	if num == 0:
+		var s = ResourceLoader.load("res://src/scenes/NotificationCorrect.tscn") # Carga el formato para data
+		notification = s.instance() # Instancialo como una variable
+		notification.get_node("title").text
+		notification.get_node("body").text 
+		notification.name = "notification "+str(count)
+		$Main/FontContent.add_child(notification) # Add it to the active scene, as child of root.
+		count=count+1
+	elif num == 1:
+		pass

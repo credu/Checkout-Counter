@@ -70,5 +70,6 @@ func _on_Button_pressed(): #Boton para subir los datos a la base de datos
 	dataRead.name = "data"+str(numData)
 	if get_tree().get_nodes_in_group("main"):
 		get_parent().get_parent().get_node("databaseRead/ScrollContainer/Formulario").add_child(dataRead)
+		get_parent().get_parent().get_parent().get_parent()._font_notification(0)
 	
 	Database.save_data()
