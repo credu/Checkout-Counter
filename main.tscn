@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/img/icons/Manu.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/img/icons/ingresos.png" type="Texture" id=12]
 [ext_resource path="res://src/img/icons/Plus.png" type="Texture" id=13]
 [ext_resource path="res://src/fonts/untitledfont5.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://src/img/icons/basic_calculator.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -356,7 +357,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options/NavbarL/ColorRect/ScrollContainer"]
-margin_bottom = 1260.0
+margin_bottom = 1400.0
 custom_constants/separation = 140
 
 [node name="Home" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
@@ -505,9 +506,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Opciones" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Calculadora" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
 margin_top = 980.0
 margin_bottom = 980.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Calculadora" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Calculadora"]
+margin_top = 49.3182
+margin_right = 593.0
+margin_bottom = 189.318
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Calculadora"
+icon = ExtResource( 15 )
+flat = true
+align = 0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opciones" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
+margin_top = 1120.0
+margin_bottom = 1120.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -528,8 +551,8 @@ __meta__ = {
 }
 
 [node name="Separador2" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
-margin_top = 1120.0
-margin_bottom = 1120.0
+margin_top = 1260.0
+margin_bottom = 1260.0
 
 [node name="ColorRect" type="ColorRect" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Separador2"]
 margin_top = 90.0
@@ -541,8 +564,8 @@ __meta__ = {
 }
 
 [node name="Salir" type="Control" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer"]
-margin_top = 1260.0
-margin_bottom = 1260.0
+margin_top = 1400.0
+margin_bottom = 1400.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -575,5 +598,6 @@ anims/navbarShow = SubResource( 12 )
 [connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Inversiones/Inversiones" to="." method="_on_Inversiones_pressed"]
 [connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Semana/semana" to="." method="_on_semana_pressed"]
 [connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Base/Base" to="." method="_on_Base_pressed"]
+[connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Calculadora/Calculadora" to="." method="_on_Calculadora_pressed"]
 [connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Opciones/Opciones" to="." method="_on_Opciones_pressed"]
 [connection signal="pressed" from="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Salir/Salir" to="." method="_on_Salir_pressed"]

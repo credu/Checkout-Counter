@@ -1,6 +1,6 @@
 extends Node
 
-var aplication = ["asd0","asd","asd2","asd3","asd4","asd5","databaseRead"]
+var aplication = ["asd0","asd","asd2","asd3","asd4","asd5","databaseRead","calculadora"]
 
 var option = 0
 var state = 0
@@ -49,8 +49,12 @@ func _on_Base_pressed():
 	option=6
 	_location()
 
-func _on_Opciones_pressed():
+func _on_Calculadora_pressed():
 	option=7
+	_location()
+
+func _on_Opciones_pressed():
+	option=8
 	print(option)
 	#asd
 
