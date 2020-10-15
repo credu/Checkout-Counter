@@ -6,19 +6,19 @@
 [ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://src/scripts/ScrollScript.gd" type="Script" id=5]
 [ext_resource path="res://src/img/icons/basic_server2.png" type="Texture" id=6]
-[ext_resource path="res://src/img/icons/77_Essential_Icons_Settings.png" type="Texture" id=7]
-[ext_resource path="res://src/img/icons/power-button.png" type="Texture" id=8]
-[ext_resource path="res://src/img/icons/77_Essential_Icons_Bar Graph.png" type="Texture" id=9]
+[ext_resource path="res://src/img/icons/EssentialIconsSettings.png" type="Texture" id=7]
+[ext_resource path="res://src/img/icons/powerbutton.png" type="Texture" id=8]
+[ext_resource path="res://src/img/icons/EssentialIconsBarGraph.png" type="Texture" id=9]
 [ext_resource path="res://src/img/icons/inversiones.png" type="Texture" id=10]
 [ext_resource path="res://src/img/icons/dinero.png" type="Texture" id=11]
 [ext_resource path="res://src/img/icons/ingresos.png" type="Texture" id=12]
 [ext_resource path="res://src/img/icons/Plus.png" type="Texture" id=13]
-[ext_resource path="res://src/fonts/untitled-font-5.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://src/fonts/untitledfont5.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
 use_filter = true
-font_data = ExtResource( 15 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
@@ -26,7 +26,7 @@ bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 70
 use_filter = true
-font_data = ExtResource( 15 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
@@ -37,26 +37,26 @@ bg_color = Color( 1, 1, 1, 1 )
 [sub_resource type="DynamicFont" id=6]
 size = 70
 use_filter = true
-font_data = ExtResource( 15 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="StyleBoxFlat" id=8]
 shadow_size = 20
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 size = 63
 use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 size = 63
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Options/Background:rect_position")
@@ -107,7 +107,7 @@ tracks/3/keys = {
 "values": [ Vector2( -1080, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Options/Background:color")
@@ -191,7 +191,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="Main/Header"]
+[node name="MoreButton" type="TextureButton" parent="Main/Header"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -134.042
@@ -368,7 +368,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 763.0
 margin_bottom = 191.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Checkout Counter"
 icon = ExtResource( 3 )
@@ -404,7 +404,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ingresos"
 icon = ExtResource( 12 )
@@ -427,7 +427,7 @@ margin_left = -13.773
 margin_top = 49.0
 margin_right = 739.227
 margin_bottom = 189.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/hseparation = 12
 text = "Gastos personales"
@@ -450,7 +450,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Inversiones"
 icon = ExtResource( 10 )
@@ -472,7 +472,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "La semana"
 icon = ExtResource( 9 )
@@ -494,7 +494,7 @@ __meta__ = {
 margin_top = 49.3182
 margin_right = 593.0
 margin_bottom = 189.318
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Base de datos"
 icon = ExtResource( 6 )
@@ -516,7 +516,7 @@ __meta__ = {
 margin_top = 51.0
 margin_right = 593.0
 margin_bottom = 191.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Opciones"
 icon = ExtResource( 7 )
@@ -550,7 +550,7 @@ __meta__ = {
 [node name="Salir" type="Button" parent="Options/NavbarL/ColorRect/ScrollContainer/VBoxContainer/Salir"]
 margin_right = 593.0
 margin_bottom = 140.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Salir"
 icon = ExtResource( 8 )
@@ -563,9 +563,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
-anims/navbarHide = SubResource( 12 )
-anims/navbarShow = SubResource( 13 )
-[connection signal="pressed" from="Main/Header/TextureButton" to="." method="_on_TextureButton_pressed"]
+anims/navbarHide = SubResource( 11 )
+anims/navbarShow = SubResource( 12 )
+[connection signal="pressed" from="Main/Header/MoreButton" to="." method="_on_MoreButton_pressed"]
 [connection signal="pressed" from="Main/Header/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Main/Bar/Plus" to="." method="_on_Plus_pressed"]
 [connection signal="pressed" from="Options/Background/ExitOptions" to="." method="_on_ExitOptions_pressed"]

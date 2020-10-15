@@ -10,7 +10,6 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "early"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -26,7 +25,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "finish"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -98,9 +96,9 @@ __meta__ = {
 }
 
 [node name="descripcion" type="Label" parent="DataInformation"]
-margin_left = 300.0
+margin_left = 310.0
 margin_top = 17.0
-margin_right = 527.0
+margin_right = 537.0
 margin_bottom = 97.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -143,7 +141,7 @@ __meta__ = {
 }
 
 [node name="Formulario" type="VBoxContainer" parent="ScrollContainer"]
-custom_constants/separation = 103
+custom_constants/separation = 123
 __meta__ = {
 "_edit_use_anchors_": false
 }

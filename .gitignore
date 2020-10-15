@@ -3,3 +3,6 @@
 export.cfg
 export_presets.cfg
 *.import
+*.png.import
+exports/
+extra
