@@ -16,8 +16,8 @@ func _ready():
 	registro = $registro
 	resultado = $resultado
 
-#func _physics_process(delta):
-#	$Control/information.text = "a=" + str(a) +"\nb=" + str(b) + "\nc=" + str(c) + "\narray= " + str(numbers) + "\nfunction=" + str(function) + "\nnum=" + str(num)
+func _physics_process(delta):
+	$Label.text = "a=" + str(a) +"\nb=" + str(b) + "\nc=" + str(c) + "\narray= " + str(numbers) + "\nfunction=" + str(function) + "\nnum=" + str(num)
 
 func _on_ac_pressed():
 	registro.text = ""
@@ -99,7 +99,14 @@ func _on_0_pressed():
 	numbers[num] += "0"
 	registro.text += "0"
 	_functions()
-	
+
+func _on_punto_pressed():
+	if resultado.text == "0":
+		resultado.text = "=0."
+	numbers[num] += "."
+	registro.text += "."
+	_functions()
+
 func _on_mas_pressed():
 	function = true
 	numFunction = 0
@@ -131,13 +138,13 @@ func _on_igual_pressed():
 func _functions():
 	match numFunction:
 		0:
-			c = int(numbers[0])+int(numbers[1])
+			c = float(numbers[0])+float(numbers[1])
 		1:
-			c = int(numbers[0])-int(numbers[1])
+			c = float(numbers[0])-float(numbers[1])
 		2:
-			c = int(numbers[0])*int(numbers[1])
+			c = float(numbers[0])*float(numbers[1])
 		3:
-			c = (float(numbers[0])/int(numbers[1]))
+			c = (float(numbers[0])/float(numbers[1]))
 	resultado.text = "="+str(c)
 	numbers[2] = str(c)
 	
