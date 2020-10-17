@@ -1,7 +1,7 @@
 extends Control
 
 var num = 0
-var numbers = [0]
+var numbers = ["","",""]
 var numFunction = 0
 var function = false
 
@@ -16,14 +16,19 @@ func _ready():
 	registro = $registro
 	resultado = $resultado
 
+func _physics_process(delta):
+	$Control/information.text = "a=" + str(a) +"\nb=" + str(b) + "\nc=" + str(c) + "\narray= " + str(numbers) + "\nfunction=" + str(function) + "\nnum=" + str(num)
+
 func _on_ac_pressed():
 	registro.text = ""
-	resultado.text = ""
+	resultado.text = "0"
 	
-	numbers = [0]
 	a = 0
 	b = 0
 	c = null
+	numbers = ["","",""]
+	function = false
+	num = 0
 	
 func _on_1_pressed():
 	registro.text += "1"
@@ -43,14 +48,32 @@ func _on_3_pressed():
 
 func _on_4_pressed():
 	registro.text += "4"
-	numbers.insert(0, 4)
-	_function()
+	if function:
+		numbers[1] += "4"
+		_function()
+		return
+	if resultado.text == "0":
+		resultado.text = "="
+	numbers[0] += "4"
+	resultado.text += "4"
 
 func _on_5_pressed():
+	if resultado.text == "0":
+		resultado.text = "="
+	numbers[num] += "5"
 	registro.text += "5"
-	numbers.insert(0, 5)
-	_function()
-
+	match numFunction:
+		0:
+			c = int(numbers[0])+int(numbers[1])
+		1:
+			c = int(numbers[0])-int(numbers[1])
+		2:
+			c = int(numbers[0])*int(numbers[1])
+		3:
+			c = (float(numbers[0])/int(numbers[1]))
+	resultado.text = "="+str(c)
+	numbers[2] = str(c)
+	
 func _on_6_pressed():
 	registro.text += "6"
 	numbers.insert(0, 6)
@@ -77,9 +100,12 @@ func _on_0_pressed():
 	_function()
 	
 func _on_mas_pressed():
-	function = true
 	numFunction = 0
+	function = true
 	registro.text += "+"
+	num=1
+	numbers[0] = numbers[2]
+	numbers[1] = ""
 	
 func _on_menos_pressed():
 	function = true
@@ -104,9 +130,9 @@ func _function():
 		for i in range(0, numbers.size()):
 			if i==0 or i==1 and c == null:
 				if i==0:
-					a = numbers[i]
+					a = int(numbers[i])
 				elif i==1:
-					b = numbers[i]
+					b = int(numbers[i])
 					match numFunction:
 						0:
 							c = a + b
@@ -115,12 +141,12 @@ func _function():
 						2:
 							c = a * b
 						3:
-							c = (float(a)/b)
+							c = (float(a) / b)
 					resultado.text = "="+str(c)
 					function=false
 			elif i== 0 or i==1 and c!=null:
 				if i==1:
-					b = numbers[i]
+					b = int(numbers[i])
 					match numFunction:
 						0:
 							c = c + a

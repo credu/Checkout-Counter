@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/fonts/arialbd.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=2]
@@ -26,6 +26,10 @@ corner_detail = 20
 size = 90
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 2 )
 
 [node name="Calculadora" type="Control"]
 anchor_right = 1.0
@@ -299,6 +303,22 @@ margin_top = 106.0
 margin_right = 1058.0
 margin_bottom = 208.0
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="information" type="Label" parent="Control"]
+margin_left = 27.0
+margin_top = 680.0
+margin_right = 1058.0
+margin_bottom = 1173.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
