@@ -1,35 +1,31 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/fonts/arialbd.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://src/Scripts/calculator.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 104
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 90
+size = 130
 use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.968627, 0.486275, 0.196078, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 corner_detail = 20
 
 [sub_resource type="DynamicFont" id=4]
 size = 90
 use_filter = true
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 100
-font_data = ExtResource( 2 )
 
 [node name="Calculadora" type="Control"]
 anchor_right = 1.0
@@ -47,8 +43,9 @@ __meta__ = {
 }
 
 [node name="content" type="GridContainer" parent="."]
-margin_right = 567.0
-margin_bottom = 620.0
+margin_left = 120.0
+margin_right = 960.0
+margin_bottom = 840.0
 custom_constants/vseparation = 20
 custom_constants/hseparation = 20
 columns = 4
@@ -57,8 +54,8 @@ __meta__ = {
 }
 
 [node name="ac" type="Button" parent="content"]
-margin_right = 132.0
-margin_bottom = 108.0
+margin_right = 206.0
+margin_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 1 )
@@ -67,9 +64,9 @@ text = "AC"
 flat = true
 
 [node name="del" type="Button" parent="content"]
-margin_left = 152.0
-margin_right = 293.0
-margin_bottom = 108.0
+margin_left = 226.0
+margin_right = 447.0
+margin_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 1 )
@@ -78,9 +75,9 @@ text = "DEL"
 flat = true
 
 [node name="exp" type="Button" parent="content"]
-margin_left = 313.0
-margin_right = 444.0
-margin_bottom = 108.0
+margin_left = 467.0
+margin_right = 672.0
+margin_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 1 )
@@ -89,9 +86,9 @@ text = "  %  "
 flat = true
 
 [node name="division" type="Button" parent="content"]
-margin_left = 464.0
-margin_right = 567.0
-margin_bottom = 108.0
+margin_left = 692.0
+margin_right = 840.0
+margin_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -100,9 +97,9 @@ text = "÷"
 flat = true
 
 [node name="7" type="Button" parent="content"]
-margin_top = 128.0
-margin_right = 132.0
-margin_bottom = 236.0
+margin_top = 172.0
+margin_right = 206.0
+margin_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -111,10 +108,10 @@ text = "7"
 flat = true
 
 [node name="8" type="Button" parent="content"]
-margin_left = 152.0
-margin_top = 128.0
-margin_right = 293.0
-margin_bottom = 236.0
+margin_left = 226.0
+margin_top = 172.0
+margin_right = 447.0
+margin_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -123,10 +120,10 @@ text = "8"
 flat = true
 
 [node name="9" type="Button" parent="content"]
-margin_left = 313.0
-margin_top = 128.0
-margin_right = 444.0
-margin_bottom = 236.0
+margin_left = 467.0
+margin_top = 172.0
+margin_right = 672.0
+margin_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -135,10 +132,10 @@ text = "9"
 flat = true
 
 [node name="multiplicacion" type="Button" parent="content"]
-margin_left = 464.0
-margin_top = 128.0
-margin_right = 567.0
-margin_bottom = 236.0
+margin_left = 692.0
+margin_top = 172.0
+margin_right = 840.0
+margin_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -147,9 +144,9 @@ text = "x"
 flat = true
 
 [node name="4" type="Button" parent="content"]
-margin_top = 256.0
-margin_right = 132.0
-margin_bottom = 364.0
+margin_top = 344.0
+margin_right = 206.0
+margin_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -158,10 +155,10 @@ text = "4"
 flat = true
 
 [node name="5" type="Button" parent="content"]
-margin_left = 152.0
-margin_top = 256.0
-margin_right = 293.0
-margin_bottom = 364.0
+margin_left = 226.0
+margin_top = 344.0
+margin_right = 447.0
+margin_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -170,10 +167,10 @@ text = "5"
 flat = true
 
 [node name="6" type="Button" parent="content"]
-margin_left = 313.0
-margin_top = 256.0
-margin_right = 444.0
-margin_bottom = 364.0
+margin_left = 467.0
+margin_top = 344.0
+margin_right = 672.0
+margin_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -182,10 +179,10 @@ text = "6"
 flat = true
 
 [node name="menos" type="Button" parent="content"]
-margin_left = 464.0
-margin_top = 256.0
-margin_right = 567.0
-margin_bottom = 364.0
+margin_left = 692.0
+margin_top = 344.0
+margin_right = 840.0
+margin_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -194,9 +191,9 @@ text = "-"
 flat = true
 
 [node name="1" type="Button" parent="content"]
-margin_top = 384.0
-margin_right = 132.0
-margin_bottom = 492.0
+margin_top = 516.0
+margin_right = 206.0
+margin_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -205,10 +202,10 @@ text = "1"
 flat = true
 
 [node name="2" type="Button" parent="content"]
-margin_left = 152.0
-margin_top = 384.0
-margin_right = 293.0
-margin_bottom = 492.0
+margin_left = 226.0
+margin_top = 516.0
+margin_right = 447.0
+margin_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -217,10 +214,10 @@ text = "2"
 flat = true
 
 [node name="3" type="Button" parent="content"]
-margin_left = 313.0
-margin_top = 384.0
-margin_right = 444.0
-margin_bottom = 492.0
+margin_left = 467.0
+margin_top = 516.0
+margin_right = 672.0
+margin_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -229,10 +226,10 @@ text = "3"
 flat = true
 
 [node name="mas" type="Button" parent="content"]
-margin_left = 464.0
-margin_top = 384.0
-margin_right = 567.0
-margin_bottom = 492.0
+margin_left = 692.0
+margin_top = 516.0
+margin_right = 840.0
+margin_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -241,9 +238,9 @@ text = "+"
 flat = true
 
 [node name="ans" type="Button" parent="content"]
-margin_top = 512.0
-margin_right = 132.0
-margin_bottom = 620.0
+margin_top = 688.0
+margin_right = 206.0
+margin_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 1 )
@@ -252,10 +249,10 @@ text = "Ans"
 flat = true
 
 [node name="0" type="Button" parent="content"]
-margin_left = 152.0
-margin_top = 512.0
-margin_right = 293.0
-margin_bottom = 620.0
+margin_left = 226.0
+margin_top = 688.0
+margin_right = 447.0
+margin_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -264,10 +261,10 @@ text = "0"
 flat = true
 
 [node name="punto" type="Button" parent="content"]
-margin_left = 313.0
-margin_top = 512.0
-margin_right = 444.0
-margin_bottom = 620.0
+margin_left = 467.0
+margin_top = 688.0
+margin_right = 672.0
+margin_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
@@ -276,10 +273,10 @@ text = "."
 flat = true
 
 [node name="igual" type="Button" parent="content"]
-margin_left = 464.0
-margin_top = 512.0
-margin_right = 567.0
-margin_bottom = 620.0
+margin_left = 692.0
+margin_top = 688.0
+margin_right = 840.0
+margin_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_styles/normal = SubResource( 3 )
@@ -305,21 +302,6 @@ margin_bottom = 208.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="information" type="Label" parent="Control"]
-margin_left = 27.0
-margin_top = 680.0
-margin_right = 1058.0
-margin_bottom = 1173.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
