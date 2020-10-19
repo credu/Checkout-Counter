@@ -4,5 +4,5 @@ export.cfg
 export_presets.cfg
 *.import
 *.png.import
-exports/
+exports/privates/
 extra
