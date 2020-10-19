@@ -64,7 +64,10 @@ func _location():
 	print(option)
 	var s = ResourceLoader.load("res://src/scenes/"+aplication[option]+".tscn") # Load the new scene.
 	content = s.instance() # Instanciar una escena
-	$Main/content.add_child(content) # Add it to the active scene, as child of root.
+	if option == 7:
+		$FullContent.add_child(content)
+	else:
+		$Main/content.add_child(content) # Add it to the active scene, as child of root.
 	($AnimationPlayer as AnimationPlayer).play("navbarHide")
 
 	
