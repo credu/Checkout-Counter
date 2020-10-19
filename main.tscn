@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://src/Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://src/scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/img/icons/Manu.png" type="Texture" id=2]
 [ext_resource path="res://src/img/icons/dinero2.png" type="Texture" id=3]
 [ext_resource path="res://src/fonts/ARLRDBD.TTF" type="DynamicFontData" id=4]
@@ -44,6 +44,62 @@ font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 shadow_size = 20
+
+[sub_resource type="Animation" id=15]
+resource_name = "plusHide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plus:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plus:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "plusShow"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plus:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plus:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="DynamicFont" id=9]
 size = 63
@@ -312,18 +368,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Bar"]
+anims/plusHide = SubResource( 15 )
+anims/plusShow = SubResource( 14 )
+
 [node name="Options" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="Options"]
-margin_right = 1080.0
+margin_left = -1080.0
 margin_bottom = 1920.0
-color = Color( 0, 0, 0.176471, 0 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ExitOptions" type="TextureButton" parent="Options/Background"]
-margin_right = 1080.0
+margin_left = -1080.0
 margin_bottom = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,25 +1,58 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/fonts/arialbd.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/fonts/seguisb.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://src/Scripts/calculator.gd" type="Script" id=3]
+[ext_resource path="res://src/scripts/calculator.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 90
+[sub_resource type="StyleBoxFlat" id=1]
+resource_local_to_scene = true
+bg_color = Color( 0.968627, 0.384314, 0.384314, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.298039, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.968627, 0.384314, 0.384314, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+outline_size = 6
+use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 1 )
+extra_spacing_top = -45
+font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=5]
+size = 130
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 129
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=8]
 size = 155
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
@@ -27,14 +60,123 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 20
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=10]
 size = 155
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 0.921569, 0.509804, 1 )
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 0.921569, 0.188235, 1 )
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 0.921569, 0.509804, 1 )
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="DynamicFont" id=14]
+size = 150
+outline_size = 6
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -45
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
 size = 50
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=16]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/registro:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 63, 75 ), Vector2( 63, -50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/resultado:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 63, 620 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "hide"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/minimize:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 155, 281 ), Vector2( 155, 300 ), Vector2( 155, 320 ), Vector2( 155, 300 ), Vector2( 155, 240 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "show"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/minimize:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 155, 281 ), Vector2( 155, 300 ), Vector2( 155, 320 ), Vector2( 155, 300 ), Vector2( 155, 240 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Calculadora" type="Control"]
 anchor_right = 1.0
@@ -44,62 +186,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="ColorRect" parent="CanvasLayer"]
 margin_right = 1080.0
 margin_bottom = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -683.0
-grow_vertical = 2
-follow_focus = true
-scroll_horizontal_enabled = false
+[node name="quit" type="Button" parent="CanvasLayer"]
+margin_left = 913.0
+margin_top = 20.0
+margin_right = 1068.0
+margin_bottom = 175.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.52549, 0.52549, 1 )
+text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Request" type="Control" parent="ScrollContainer/VBoxContainer"]
-
-[node name="registro2" type="Label" parent="ScrollContainer/VBoxContainer/Request"]
-margin_left = 615.0
-margin_right = 1080.0
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="resultado2" type="Label" parent="ScrollContainer/VBoxContainer/Request"]
-margin_left = 615.0
-margin_top = 106.0
-margin_right = 1058.0
-margin_bottom = 208.0
-custom_fonts/font = SubResource( 1 )
+[node name="registro" type="Label" parent="CanvasLayer"]
+margin_left = 63.0
+margin_top = 75.0
+margin_right = 1038.0
+margin_bottom = 780.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
+align = 2
+valign = 2
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="resultado" type="Label" parent="CanvasLayer"]
+margin_left = 63.0
+margin_top = 620.0
+margin_right = 1043.0
+margin_bottom = 794.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.294118, 0.294118, 0.294118, 1 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="separation" type="ColorRect" parent="CanvasLayer"]
 margin_left = 50.0
 margin_top = 790.0
 margin_right = 1040.0
-margin_bottom = 793.0
+margin_bottom = 792.5
 color = Color( 0.839216, 0.839216, 0.839216, 0.913725 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,7 +269,7 @@ margin_right = 230.0
 margin_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "C"
 flat = true
@@ -137,7 +280,7 @@ margin_right = 485.0
 margin_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "DEL"
 flat = true
@@ -148,7 +291,7 @@ margin_right = 765.0
 margin_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "  %  "
 flat = true
@@ -159,7 +302,7 @@ margin_right = 962.0
 margin_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "÷"
 flat = true
@@ -170,7 +313,7 @@ margin_right = 230.0
 margin_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " 7 "
 flat = true
@@ -182,7 +325,7 @@ margin_right = 485.0
 margin_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "8"
 flat = true
@@ -194,7 +337,7 @@ margin_right = 765.0
 margin_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "9"
 flat = true
@@ -206,7 +349,7 @@ margin_right = 962.0
 margin_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "x"
 flat = true
@@ -217,7 +360,7 @@ margin_right = 230.0
 margin_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4"
 flat = true
@@ -229,7 +372,7 @@ margin_right = 485.0
 margin_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 flat = true
@@ -241,7 +384,7 @@ margin_right = 765.0
 margin_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6"
 flat = true
@@ -253,7 +396,7 @@ margin_right = 962.0
 margin_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "-"
 flat = true
@@ -264,7 +407,7 @@ margin_right = 230.0
 margin_bottom = 780.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 flat = true
@@ -276,7 +419,7 @@ margin_right = 485.0
 margin_bottom = 780.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2"
 flat = true
@@ -288,7 +431,7 @@ margin_right = 765.0
 margin_bottom = 780.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3"
 flat = true
@@ -300,7 +443,7 @@ margin_right = 962.0
 margin_bottom = 780.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "+"
 flat = true
@@ -311,7 +454,7 @@ margin_right = 230.0
 margin_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "Ans"
 flat = true
@@ -323,7 +466,7 @@ margin_right = 485.0
 margin_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 flat = true
@@ -335,7 +478,7 @@ margin_right = 765.0
 margin_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "."
 flat = true
@@ -347,29 +490,26 @@ margin_right = 962.0
 margin_bottom = 980.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = " = "
 
-[node name="registro" type="Label" parent="."]
-margin_left = 615.0
-margin_right = 1080.0
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="resultado" type="Label" parent="."]
-margin_left = 615.0
-margin_top = 106.0
-margin_right = 1058.0
-margin_bottom = 208.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
+[node name="minimize" type="Button" parent="CanvasLayer2"]
+margin_left = 730.0
+margin_right = 885.0
+margin_bottom = 240.0
+focus_mode = 0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 0.52549, 0.52549, 1 )
+toggle_mode = true
+enabled_focus_mode = 0
+text = "-"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -377,9 +517,17 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 818.0
 margin_bottom = 782.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "asd"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/enterNumber = SubResource( 16 )
+anims/hide = SubResource( 17 )
+anims/show = SubResource( 18 )
+[connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/content/ac" to="." method="_on_ac_pressed"]
 [connection signal="pressed" from="CanvasLayer/content/division" to="." method="_on_division_pressed"]
 [connection signal="pressed" from="CanvasLayer/content/7" to="." method="_on_7_pressed"]
@@ -397,3 +545,4 @@ text = "asd"
 [connection signal="pressed" from="CanvasLayer/content/0" to="." method="_on_0_pressed"]
 [connection signal="pressed" from="CanvasLayer/content/punto" to="." method="_on_punto_pressed"]
 [connection signal="pressed" from="CanvasLayer/content/igual" to="." method="_on_igual_pressed"]
+[connection signal="toggled" from="CanvasLayer2/minimize" to="." method="_on_minimize_toggled"]
