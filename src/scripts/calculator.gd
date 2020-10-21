@@ -13,8 +13,8 @@ var registro
 var resultado
 
 func _ready():
-	registro = $CanvasLayer/registro
-	resultado = $CanvasLayer/resultado
+	registro = $CanvasLayer/Interfaz/registro
+	resultado = $CanvasLayer/Interfaz/resultado
 
 #func _physics_process(delta):
 #	$Label.text = "a=" + str(a) +"\nb=" + str(b) + "\nc=" + str(c) + "\narray= " + str(numbers) + "\nfunction=" + str(function) + "\nnum=" + str(num)
@@ -44,7 +44,7 @@ func _on_2_pressed():
 		registro.text = ""
 		($AnimationPlayer as AnimationPlayer).play("enterNumber")
 	numbers[num] += "2"
-	registro.text += "3"
+	registro.text += "2"
 	_functions()
 
 func _on_3_pressed():

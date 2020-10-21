@@ -644,8 +644,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullContent" type="CanvasLayer" parent="."]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
 anims/navbarHide = SubResource( 13 )

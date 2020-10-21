@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/fonts/arialbd.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/fonts/seguisb.ttf" type="DynamicFontData" id=2]
@@ -96,9 +96,37 @@ size = 50
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=16]
+resource_name = "early"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Interfaz:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Adjunto:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=17]
 length = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/registro:rect_position")
+tracks/0/path = NodePath("CanvasLayer/Interfaz/registro:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -110,7 +138,7 @@ tracks/0/keys = {
 "values": [ Vector2( 63, 75 ), Vector2( 63, -50 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/resultado:rect_position")
+tracks/1/path = NodePath("CanvasLayer/Interfaz/resultado:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -122,11 +150,10 @@ tracks/1/keys = {
 "values": [ Vector2( 63, 620 ) ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "hide"
+[sub_resource type="Animation" id=18]
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/minimize:rect_size")
+tracks/0/path = NodePath("CanvasLayer/Adjunto/minimize:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -138,7 +165,7 @@ tracks/0/keys = {
 "values": [ Vector2( 155, 281 ), Vector2( 155, 300 ), Vector2( 155, 320 ), Vector2( 155, 300 ), Vector2( 155, 240 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer:scale")
+tracks/1/path = NodePath("CanvasLayer/Interfaz:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -150,11 +177,10 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "show"
+[sub_resource type="Animation" id=19]
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/minimize:rect_size")
+tracks/0/path = NodePath("CanvasLayer/Adjunto/minimize:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -166,16 +192,16 @@ tracks/0/keys = {
 "values": [ Vector2( 155, 281 ), Vector2( 155, 300 ), Vector2( 155, 320 ), Vector2( 155, 300 ), Vector2( 155, 240 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer:scale")
+tracks/1/path = NodePath("CanvasLayer/Interfaz:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1e-05 ), Vector2( 1, 1 ) ]
 }
 
 [node name="Calculadora" type="Control"]
@@ -187,15 +213,22 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
-[node name="background" type="ColorRect" parent="CanvasLayer"]
+[node name="Interfaz" type="Control" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="CanvasLayer/Interfaz"]
 margin_right = 1080.0
 margin_bottom = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="quit" type="Button" parent="CanvasLayer"]
+[node name="quit" type="Button" parent="CanvasLayer/Interfaz"]
 margin_left = 913.0
 margin_top = 20.0
 margin_right = 1068.0
@@ -210,11 +243,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="registro" type="Label" parent="CanvasLayer"]
+[node name="registro" type="Label" parent="CanvasLayer/Interfaz"]
 margin_left = 63.0
-margin_top = 75.0
+margin_top = -25.0
 margin_right = 1038.0
-margin_bottom = 780.0
+margin_bottom = 680.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
@@ -225,7 +258,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="resultado" type="Label" parent="CanvasLayer"]
+[node name="resultado" type="Label" parent="CanvasLayer/Interfaz"]
 margin_left = 63.0
 margin_top = 620.0
 margin_right = 1043.0
@@ -238,7 +271,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="separation" type="ColorRect" parent="CanvasLayer"]
+[node name="separation" type="ColorRect" parent="CanvasLayer/Interfaz"]
 margin_left = 50.0
 margin_top = 790.0
 margin_right = 1040.0
@@ -248,15 +281,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="content" type="GridContainer" parent="CanvasLayer"]
+[node name="content" type="GridContainer" parent="CanvasLayer/Interfaz"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -481.0
-margin_top = -1120.0
-margin_right = 481.0
-margin_bottom = -140.0
+margin_left = 39.0
+margin_top = 760.0
+margin_right = 1001.0
+margin_bottom = 1740.0
 custom_constants/vseparation = 20
 custom_constants/hseparation = 20
 columns = 4
@@ -264,7 +297,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ac" type="Button" parent="CanvasLayer/content"]
+[node name="ac" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_right = 230.0
 margin_bottom = 180.0
 grow_horizontal = 2
@@ -274,7 +307,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "C"
 flat = true
 
-[node name="del" type="Button" parent="CanvasLayer/content"]
+[node name="del" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 250.0
 margin_right = 485.0
 margin_bottom = 180.0
@@ -285,7 +318,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "DEL"
 flat = true
 
-[node name="exp" type="Button" parent="CanvasLayer/content"]
+[node name="exp" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 505.0
 margin_right = 765.0
 margin_bottom = 180.0
@@ -296,7 +329,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "  %  "
 flat = true
 
-[node name="division" type="Button" parent="CanvasLayer/content"]
+[node name="division" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 785.0
 margin_right = 962.0
 margin_bottom = 180.0
@@ -307,7 +340,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "÷"
 flat = true
 
-[node name="7" type="Button" parent="CanvasLayer/content"]
+[node name="7" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_top = 200.0
 margin_right = 230.0
 margin_bottom = 380.0
@@ -318,7 +351,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " 7 "
 flat = true
 
-[node name="8" type="Button" parent="CanvasLayer/content"]
+[node name="8" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 250.0
 margin_top = 200.0
 margin_right = 485.0
@@ -330,7 +363,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "8"
 flat = true
 
-[node name="9" type="Button" parent="CanvasLayer/content"]
+[node name="9" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 505.0
 margin_top = 200.0
 margin_right = 765.0
@@ -342,7 +375,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "9"
 flat = true
 
-[node name="multiplicacion" type="Button" parent="CanvasLayer/content"]
+[node name="multiplicacion" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 785.0
 margin_top = 200.0
 margin_right = 962.0
@@ -354,7 +387,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "x"
 flat = true
 
-[node name="4" type="Button" parent="CanvasLayer/content"]
+[node name="4" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_top = 400.0
 margin_right = 230.0
 margin_bottom = 580.0
@@ -365,7 +398,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4"
 flat = true
 
-[node name="5" type="Button" parent="CanvasLayer/content"]
+[node name="5" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 250.0
 margin_top = 400.0
 margin_right = 485.0
@@ -377,7 +410,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 flat = true
 
-[node name="6" type="Button" parent="CanvasLayer/content"]
+[node name="6" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 505.0
 margin_top = 400.0
 margin_right = 765.0
@@ -389,7 +422,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6"
 flat = true
 
-[node name="menos" type="Button" parent="CanvasLayer/content"]
+[node name="menos" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 785.0
 margin_top = 400.0
 margin_right = 962.0
@@ -401,7 +434,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "-"
 flat = true
 
-[node name="1" type="Button" parent="CanvasLayer/content"]
+[node name="1" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_top = 600.0
 margin_right = 230.0
 margin_bottom = 780.0
@@ -412,7 +445,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 flat = true
 
-[node name="2" type="Button" parent="CanvasLayer/content"]
+[node name="2" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 250.0
 margin_top = 600.0
 margin_right = 485.0
@@ -424,7 +457,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2"
 flat = true
 
-[node name="3" type="Button" parent="CanvasLayer/content"]
+[node name="3" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 505.0
 margin_top = 600.0
 margin_right = 765.0
@@ -436,7 +469,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3"
 flat = true
 
-[node name="mas" type="Button" parent="CanvasLayer/content"]
+[node name="mas" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 785.0
 margin_top = 600.0
 margin_right = 962.0
@@ -448,7 +481,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "+"
 flat = true
 
-[node name="ans" type="Button" parent="CanvasLayer/content"]
+[node name="ans" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_top = 800.0
 margin_right = 230.0
 margin_bottom = 980.0
@@ -459,7 +492,7 @@ custom_colors/font_color = Color( 0.968627, 0.486275, 0.196078, 1 )
 text = "Ans"
 flat = true
 
-[node name="0" type="Button" parent="CanvasLayer/content"]
+[node name="0" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 250.0
 margin_top = 800.0
 margin_right = 485.0
@@ -471,7 +504,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 flat = true
 
-[node name="punto" type="Button" parent="CanvasLayer/content"]
+[node name="punto" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 505.0
 margin_top = 800.0
 margin_right = 765.0
@@ -483,7 +516,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "."
 flat = true
 
-[node name="igual" type="Button" parent="CanvasLayer/content"]
+[node name="igual" type="Button" parent="CanvasLayer/Interfaz/content"]
 margin_left = 785.0
 margin_top = 800.0
 margin_right = 962.0
@@ -495,12 +528,18 @@ custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = " = "
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Adjunto" type="Control" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="minimize" type="Button" parent="CanvasLayer2"]
+[node name="minimize" type="Button" parent="CanvasLayer/Adjunto"]
 margin_left = 730.0
 margin_right = 885.0
-margin_bottom = 240.0
+margin_bottom = 281.0
 focus_mode = 0
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
@@ -524,25 +563,27 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/enterNumber = SubResource( 16 )
-anims/hide = SubResource( 17 )
-anims/show = SubResource( 18 )
-[connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/ac" to="." method="_on_ac_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/division" to="." method="_on_division_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/7" to="." method="_on_7_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/8" to="." method="_on_8_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/9" to="." method="_on_9_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/multiplicacion" to="." method="_on_multiplicacion_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/4" to="." method="_on_4_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/5" to="." method="_on_5_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/6" to="." method="_on_6_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/menos" to="." method="_on_menos_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/1" to="." method="_on_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/2" to="." method="_on_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/3" to="." method="_on_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/mas" to="." method="_on_mas_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/0" to="." method="_on_0_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/punto" to="." method="_on_punto_pressed"]
-[connection signal="pressed" from="CanvasLayer/content/igual" to="." method="_on_igual_pressed"]
-[connection signal="toggled" from="CanvasLayer2/minimize" to="." method="_on_minimize_toggled"]
+autoplay = "early"
+anims/early = SubResource( 16 )
+anims/enterNumber = SubResource( 17 )
+anims/hide = SubResource( 18 )
+anims/show = SubResource( 19 )
+[connection signal="pressed" from="CanvasLayer/Interfaz/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/ac" to="." method="_on_ac_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/division" to="." method="_on_division_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/9" to="." method="_on_9_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/multiplicacion" to="." method="_on_multiplicacion_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/mas" to="." method="_on_mas_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/0" to="." method="_on_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/punto" to="." method="_on_punto_pressed"]
+[connection signal="pressed" from="CanvasLayer/Interfaz/content/igual" to="." method="_on_igual_pressed"]
+[connection signal="toggled" from="CanvasLayer/Adjunto/minimize" to="." method="_on_minimize_toggled"]
